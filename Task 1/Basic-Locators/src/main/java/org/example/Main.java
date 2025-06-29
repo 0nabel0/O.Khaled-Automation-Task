@@ -16,9 +16,13 @@ public class Main {
         driver.findElement(By.xpath("//input[@type='password']")).sendKeys("123456");
         driver.findElement(By.id("ConfirmPassword")).sendKeys("123456");
         driver.findElement(By.cssSelector(".button-1.register-next-step-button")).click();
+        String text = driver.findElement(By.tagName("h1")).getText();
+        System.out.println(text);
+        driver.findElement(By.linkText("Log out")).click();
         driver.findElement(By.linkText("Log in")).click();
         driver.findElement(By.xpath("//input[@class='email']")).sendKeys("aahmeed.naabeel@gmail.com");
         driver.findElement(By.cssSelector("input[class='password']")).sendKeys("123456");
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
     }
 
 }
